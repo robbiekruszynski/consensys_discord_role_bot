@@ -1,6 +1,14 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const fs = require('fs');
 require('dotenv').config();
+
+client.commands = new Discord.Collection();
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+for (const file of commandFiles) {
+    const command = require(`./commands/${file}`);
+    client.commands.set(command.name, command);
+}
 
 client.once('ready', () => {
     console.log('this bot is online');
@@ -21,24 +29,12 @@ client.on('message', message => {
     if (command === "ping"){
         message.channel.send ('pong!');
     } else if (command == "academy"){
-        message.channel.send('https://consensys.net/academy/');
+       client.commands.get('academy').execute(message,args);
     } else if (command == "buidl"){
-        message.channel.send('https://www.meetup.com/pro/BUIDL');
+        client.commands.get('buidl').execute(message,args);
     };
-    //build this out for all products if needed? 
-    //check with team 
+
 });
-
-
-
-
-
-
-
-
-
-
-
 
 
 client.login(process.env.TOKEN);
