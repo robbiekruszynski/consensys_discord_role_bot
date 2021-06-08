@@ -20,6 +20,44 @@ module.exports = {
         let messageEmbed = await message.channel.send(embed);
         messageEmbed.react(academyEmoji);
         messageEmbed.react(metaMaskEmoji);
-    }
-       
+
+    client.on('messageReactionAdd', async (reaction, user) => {
+        if (reaction.message.partial) await reaction.message.fetch();
+        if (reaction.partial) await reaction.fetch();
+        if (user.bot) return;
+        if (!reaction.message.guild) return;
+
+        if (reaction.message.channel.id == channel) {
+            if (reaction.emoji.name === academyEmoji) {
+                await reaction.message.guild.members.cache.get(user.id).roles.add(academy);
+            }
+            if (reaction.emoji.name === metaMaskEmoji) {
+                await reaction.message.guild.members.cache.get(user.id).roles.add(metaMask);
+            }
+        } else {
+            return;
+        }
+
+    });
+
+    client.on('messageReactionRemove', async (reaction, user) => {
+
+        if (reaction.message.partial) await reaction.message.fetch();
+        if (reaction.partial) await reaction.fetch();
+        if (user.bot) return;
+        if (!reaction.message.guild) return;
+
+
+        if (reaction.message.channel.id == channel) {
+            if (reaction.emoji.name === academyEmoji) {
+                await reaction.message.guild.members.cache.get(user.id).roles.remove(academy);
+            }
+            if (reaction.emoji.name === metaMaskEmoji) {
+                await reaction.message.guild.members.cache.get(user.id).roles.remove(metaMask);
+            }
+        } else {
+            return;
+        }
+    });
+    } 
 }
