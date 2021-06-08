@@ -41,6 +41,4 @@ client.on('message', message => {
 
 
 
-//this has to be last line 
 client.login(process.env.TOKEN);
-
