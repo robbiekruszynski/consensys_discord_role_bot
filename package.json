@@ -1,0 +1,22 @@
+{
+  "name": "consensys_discord_role_bot",
+  "version": "1.0.0",
+  "description": "role assignment based on selection ",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Robbiekruszynski/consensys_discord_role_bot.git"
+  },
+  "keywords": [
+    "bot"
+  ],
+  "author": "Robbie Kruszynski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Robbiekruszynski/consensys_discord_role_bot/issues"
+  },
+  "homepage": "https://github.com/Robbiekruszynski/consensys_discord_role_bot#readme"
+}
