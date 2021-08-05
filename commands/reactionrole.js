@@ -21,9 +21,9 @@ module.exports = {
             .setTitle("Choose what you'd like to have eyes on")
             .setDescription('Choosing a product team emoji will give you the abilitiy to view their channels along with interact with other memebers who have the same role!\n\n'
                 + `${academyEmoji} for the ConsenSys Academy channels\n`
+                + `${bootcampEmoji} for the ConsenSys 2021 bootcamp\n`
                 + `${metaMaskEmoji} for MetaMask channels`);
-                + `${bootcampEmoji} for Bootcamp channels`);
-
+                
 
         let messageEmbed = await message.channel.send(embed);
         messageEmbed.react(academyEmoji);
@@ -43,6 +43,9 @@ module.exports = {
             }
             if (reaction.emoji.name === metaMaskEmoji) {
                 await reaction.message.guild.members.cache.get(user.id).roles.add(metaMask);
+            }
+            if (reaction.emoji.name === bootcampEmoji) {
+                await reaction.message.guild.members.cache.get(user.id).roles.add(bootcamp);
             }
         } else {
             return;
@@ -64,6 +67,9 @@ module.exports = {
             }
             if (reaction.emoji.name === metaMaskEmoji) {
                 await reaction.message.guild.members.cache.get(user.id).roles.remove(metaMask);
+            }
+            if (reaction.emoji.name === bootcampEmoji) {
+                await reaction.message.guild.members.cache.get(user.id).roles.remove(bootcamp);
             }
         } else {
             return;
