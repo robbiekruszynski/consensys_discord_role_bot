@@ -30,11 +30,13 @@ client.on('message', message => {
         message.channel.send ('pong!');
     } else if (command == "academy"){
        client.commands.get('academy').execute(message,args);
+    } else if (command == "bootcamp"){
+        client.commands.get('bootcamp').execute(message,args);
     } else if (command == "buidl"){
         client.commands.get('buidl').execute(message,args);
     } else if (command === 'reactionrole') {
         client.commands.get('reactionrole').execute(message, args, Discord, client);
-    }
+    } 
 
 });
 
