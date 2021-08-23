@@ -16,9 +16,9 @@ client.once('ready', () => {
 
 const prefix = '!';
 
-client.once('ready', () => {
-    console.log('bot is online');
-});
+// client.once('ready', () => {
+//     console.log('bot is online');
+// });
 
 client.on('message', message => {
     if(!message.content.startsWith(prefix) || message.author.bot) return;
@@ -34,8 +34,8 @@ client.on('message', message => {
         client.commands.get('bootcamp').execute(message,args);
     } else if (command == "buidl"){
         client.commands.get('buidl').execute(message,args);
-    } else if (command === 'reactionrole') {
-        client.commands.get('reactionrole').execute(message, args, Discord, client);
+    } else if (command === 'role') {
+        client.commands.get('role').execute(message, args, Discord, client);
     } 
 
 });
