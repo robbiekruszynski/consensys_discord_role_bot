@@ -25,12 +25,8 @@ client.on('message', message => {
 
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
-
-    if (command === "ping"){
-        message.channel.send ('pong!');
-    } else if (command == "academy"){
-       client.commands.get('academy').execute(message,args);
-    } else if (command == "bootcamp"){
+       
+    if (command == "bootcamp"){
         client.commands.get('bootcamp').execute(message,args);
     } else if (command == "buidl"){
         client.commands.get('buidl').execute(message,args);
