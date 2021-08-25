@@ -16,6 +16,8 @@ client.once('ready', () => {
 
 const prefix = '!';
 
+//bootcamp role 880087020440018994
+
 // client.once('ready', () => {
 //     console.log('bot is online');
 // });

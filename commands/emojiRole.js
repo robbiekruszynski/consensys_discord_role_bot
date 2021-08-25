@@ -3,10 +3,12 @@ module.exports = {
     description: "Bot for adding roles based on emoji selection",
     async execute(message, args, Discord, client) {
         //right click and copy channel ID 
-        const channel = '851913774343520266'
+        const channel = '706988726341075034'
+        
+        
         // const academy = message.guild.roles.cache.find(role => role.name === "Academy Member");
         // const metaMask = message.guild.roles.cache.find(role => role.name === "MetaMask Member");
-        const bootcamp = message.guild.roles.cache.find(role => role.name === "Blockchain Developer Bootcamp 2021");
+        const bootcamp2021 = message.guild.roles.cache.find(role => role.name === "Blockchain Developer Bootcamp 2021");
 
         const bootcampEmoji = '💡';
         // const academyEmoji = '🧑🏽‍🎓';
@@ -40,7 +42,7 @@ module.exports = {
 
         if (reaction.message.channel.id == channel) {
             if (reaction.emoji.name === bootcampEmoji) {
-                await reaction.message.guild.members.cache.get(user.id).roles.add(bootcamp);
+                await reaction.message.guild.members.cache.get(user.id).roles.add(bootcamp2021);
             }
             // if (reaction.emoji.name === metaMaskEmoji) {
             //     await reaction.message.guild.members.cache.get(user.id).roles.add(metaMask);
@@ -65,7 +67,7 @@ module.exports = {
 
         if (reaction.message.channel.id == channel) {
             if (reaction.emoji.name === bootcampEmoji) {
-                await reaction.message.guild.members.cache.get(user.id).roles.remove(bootcamp);
+                await reaction.message.guild.members.cache.get(user.id).roles.remove(bootcamp2021);
             }
             // if (reaction.emoji.name === metaMaskEmoji) {
             //     await reaction.message.guild.members.cache.get(user.id).roles.remove(metaMask);
