@@ -3,7 +3,7 @@ module.exports = {
     description: "Bot for adding roles based on emoji selection",
     async execute(message, args, Discord, client) {
         //right click and copy channel ID 
-        const channel = '706988726341075034'
+        const channel = '879788594984779786'
         
         
         // const academy = message.guild.roles.cache.find(role => role.name === "Academy Member");
@@ -21,7 +21,7 @@ module.exports = {
         let embed = new Discord.MessageEmbed()
             .setColor('#e42643')
             .setTitle("Welcome to the 2021 Developer Bootcamp!")
-            .setDescription('Choosing this emoji will give you the abilitiy to view the 2021 Developer Bootcamp channels along with interact with other memebers who have the same role!\n\n'
+            .setDescription('Choosing this emoji will give you the ability to view the 2021 Developer Bootcamp channels along with interact with other members who have the same role!\n\n'
             + `${bootcampEmoji} for the Blockchain Developer Bootcamp 2021`);
             // + `${academyEmoji} for the ConsenSys Academy channels\n`
             // + `${metaMaskEmoji} for MetaMask channels`);
