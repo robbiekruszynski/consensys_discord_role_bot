@@ -47,3 +47,28 @@ module.exports = {
 To create a command that can be
 
 emojiRole.js
+
+if you want a command to be limited to a channel in terms of it's execution you would add that discord channels information
+
+right click on the channel and copy the channel ID
+
+![Screenshot](/imgs/id.png)
+
+Below we can see the channel, and the variable for bootcamp2021 that grants a role based on the eomji selection. This can be build out
+
+```
+  const channel = '879788594984779786'
+
+
+        const bootcamp2021 = message.guild.roles.cache.find(role => role.name === "Blockchain Developer Bootcamp 2021");
+
+        const bootcampEmoji = '💡';
+
+
+        ....
+
+
+         if (reaction.emoji.name === bootcampEmoji) {
+                await reaction.message.guild.members.cache.get(user.id).roles.add(bootcamp2021);
+
+```
